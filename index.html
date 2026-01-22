@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Calculator</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; }
+        .calc { border: 2px solid #333; padding: 20px; border-radius: 10px; background: white; }
+        input { width: 100%; height: 40px; text-align: right; margin-bottom: 10px; font-size: 1.2rem; }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+        button { padding: 15px; font-size: 1rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <button onclick="clearRes()">C</button>
+            <button onclick="addVal('/')">/</button>
+            <button onclick="addVal('*')">X</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addVal('7')">7</button>
+            <button onclick="addVal('8')">8</button>
+            <button onclick="addVal('9')">9</button>
+            <button onclick="addVal('-')">-</button>
+            <button onclick="addVal('4')">4</button>
+            <button onclick="addVal('5')">5</button>
+            <button onclick="addVal('6')">6</button>
+            <button onclick="addVal('+')">+</button>
+            <button onclick="addVal('1')">1</button>
+            <button onclick="addVal('2')">2</button>
+            <button onclick="addVal('3')">3</button>
+            <button onclick="addVal('0')">0</button>
+        </div>
+    </div>
+    <script>
+        let res = document.getElementById('result');
+        function addVal(v) { res.value += v; }
+        function clearRes() { res.value = ''; }
+        function calculate() { try { res.value = eval(res.value); } catch { res.value = 'Error'; } }
+    </script>
+</body>
+</html>
