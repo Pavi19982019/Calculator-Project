@@ -1,5 +1,9 @@
 pipeline {
     agent any 
+     options {
+        // Keeps only the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
     stages {
         stage('Git Clone') {
             steps {
