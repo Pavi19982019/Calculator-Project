@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        DOCKER_IMAGE='ennavazhkai'
+        DOCKER_IMAGE='ennavazhkaida'
         CONTAINER_NAME='Pipelincontainer'
     }
     stages {
