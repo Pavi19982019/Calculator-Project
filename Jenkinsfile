@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools any 
+    {
+        maven 'mvn 9.9.9'
+    }
     environment{
         DOCKER_IMAGE='ennavazhkaida'
         CONTAINER_NAME='Pipelincontainer'
